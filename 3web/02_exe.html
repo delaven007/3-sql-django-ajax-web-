@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+            接受用户输入的身高(m)和体重(kg)
+            计算bmi=体重/身高的平方
+            对当前的bmi的结果保留一位小数
+            判断身体指数：
+            bmi<18.5 "弱不禁风"
+            18.5-23.9  “健康”
+            >23.9     “肥的流油”
+        */
+        var kg = prompt('体重(kg)：');
+        var m = prompt('身高(m)：');
+        bm1=bmi_=kg/(m*m);
+        bm2=bmi_.toFixed(1);
+        //console.log(bm1,bm2);
+        var bmi=bm2<=18.5? "弱不禁风" :bm2>18.5 && bm2<23.9? "健康" : "肥的流油";
+        console.log(bmi);
+    </script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

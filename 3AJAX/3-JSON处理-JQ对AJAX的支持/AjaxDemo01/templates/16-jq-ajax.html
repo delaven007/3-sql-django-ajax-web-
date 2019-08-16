@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-jq-ajax.html</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $('#btnajax').click(function(){
+                $.ajax({
+                    url:"/ajax/10_json_server",
+                    type:"get",
+                    dataType:"json",
+                    async:true,
+                    success:function(resText){
+                        $(resText).each(function(i,obj){
+                            console.log("用户名:"+obj.fields.uname);
+                            console.log("邮箱:"+obj.fields.uemail);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnajax">使用$.ajax()请求数据</button>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

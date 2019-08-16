@@ -1,0 +1,49 @@
+from django.conf.urls import url
+from . import views
+urlpatterns = [
+    #演示创建xhr
+    url(r'^01-createXhr/',views.create_view),
+    #使用ajax发送get请求的步骤
+    url(r'02-server/$',views.server02_views),
+    url(r'02-ajax-get/$',views.ajaxget_views),
+    #使用ajax发送get请求并附带参数
+    url(r'03-ajax-get-params/$',views.getparams_views),
+    url(r'^03-server/$',views.server03_views),
+    #
+    url(r'04-checkuname/$',views.checkuname_views),
+    url(r'^04-register/$',views.register_views),
+    url(r"^04-reguser/$",views.reguser_views),
+    url(r"^04-regpost/$",views.regpost_views),
+    #5.使用AJAX发送post请求
+    url(r"^05-ajax-post/$",views.post_views),
+    url(r'^05-server/$',views.server05_views),
+    #6. 使用ajax读取数据
+    url(r'06-ajax-users/$',views.users_views),
+    url(r'^06-server/$',views.server06_views),
+    #7.在前端中处理JSON字符串
+    url(r"^07-json/$",views.json_views),
+    #8.在服务器处理Jason字符串
+    url(r"^08-json-server/$",views.jsonserver_views),
+    #9.在服务器读取users表中的数据在转换成json串
+    url(r"^09-json-users/$",views.jsonusers_views),
+    #10.
+    url(r'^10_json_server/$',views.jsonserver10_views),
+    url(r'^10_json_users/$',views.jsonusers10_views),
+    #11.前段中将JS对象转换成JSon对象
+    url(r'^11-front-json/$',views.front_views),
+    #.服务器端中将JSon串转换为字典/列表
+    url(r'^11-server-json/$',views.serverjson_views),
+    #12.用json注册用户
+    url(r"^12-server/$",views.server12_views),
+    url(r"^12-register-json/$",views.register12_views),
+    #13.jquery中的$obj.load()的作用
+    url(r'^13-head/$',views.head_views),
+    url(r'^13-index/$',views.index_views),
+    #14.jquery中$.get()作用
+    url(r'^14-jq-get/$',views.jqget_views),
+    #15.$.get()实现搜索建议模糊下拉查询
+    url(r'^15-search/$',views.search_views),
+    url(r'^15-server/$',views.server15_views),
+    #16.通过$.ajax()完成自定义ajax请求
+    url(r'^16-jq-ajax/$',views.jqajax_views),
+]

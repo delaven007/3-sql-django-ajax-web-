@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jQuery文件-->
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+    <h1>O(∩_∩)O哈哈~</h1>
+    <h1 id="d1">1O(∩_∩)O哈哈~</h1>
+    <h1 id="d2">2O(∩_∩)O哈哈~</h1>
+    <h1 id="cd">cO(∩_∩)O哈哈~</h1>
+    <h1 id="adi">铭铭</h1>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <a href="http://www.tmooc.cn/">哈哈</a>
+    </ul>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    
+    <script>
+        console.log($("[id]"));
+        console.log($("[id=d1]"));
+        //匹配id属性值以d开头的元素
+        console.log($("[id ^=d]"));
+        //匹配id属性值以d结尾的元素
+        console.log($("[id $=d]"));
+         //匹配id属性值包含d的元素
+        console.log($("[id *=d]"));
+
+        //子元素过滤选择器
+        $("li:first").css("color","red");
+        $("li:first-child").css("background","green");
+        $("li:last-child").css("background","orange");
+        $("li:nth-child(4)").css("text-align","center");
+
+        
+        
+    </script>
+
+
+</body>
+</html>

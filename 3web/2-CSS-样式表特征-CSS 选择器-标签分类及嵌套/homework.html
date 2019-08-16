@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加管理员</title>
+</head>
+<body>
+
+<form action="/login" method="get" enctype="application/x-www-form-urlencoded">
+    <h1>增加管理员</h1>
+    <p>
+        姓名: <input type="text"> 10个字符以内
+    </p>
+    <p>
+        密码: <input type="text"> 10个字符以内
+    </p>
+    <p>
+    性别: <input type="radio" name="'sex" checked> 男
+    <input type="radio" name="sex"> 女
+    </p>
+
+    <table>
+        <tr>
+        角色:
+
+        <input type="checkbox"
+        name="play" value="superroot"
+        id="superroot">
+        <label for="superroot">超级管理员</label> &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;至少选择一个
+
+    </table>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="checkbox"
+        name="play" value="ufcroot"
+        id="ufcroot">
+        <label for="ufcroot">账单管理员</label>
+
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+            头像:
+            <input type="file" name="uimg" >
+            选择文件
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button>
+                    保存
+                </button>
+                <input type="reset" value="重置">
+            </td>
+        </tr>
+    </table>
+    </form>
+<hr>
+<select name="city" id="">
+        <!--默认选中第一个option，可以手动设置selected表示选中-->
+        <option value="display"></option>
+        <option value="bejing" >北京</option>
+        <option value="tianjin">天津</option>
+        <option value="shanghai">上海</option>
+        <option value="shenzhen">深圳</option>
+    </select>
+<hr>
+<style>
+    .h5{
+            font-size:500px;
+            background:tan;
+        }
+    h5:hover{
+            background:wheat;
+        }
+</style>
+
+<h5>H5标签</h5><h5>H5标签</h5><h5>H5标签</h5><h5>H5标签</h5>
+</body>
+</html>

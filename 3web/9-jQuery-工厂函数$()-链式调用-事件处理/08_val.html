@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jQuery文件-->
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        /*
+            创建一个输入框、按钮、
+            div按钮点击时将输入框的值以一级标题的形式显示在div中
+
+        */
+        window.onload=function(){
+            btn.onclick=function(){
+                //$("div").text("<h1>"+$("input").val()+"</h1>")
+                //修改输入框中的值
+                //$("input").val("老狗");
+            };
+            //属性操作
+            //jquery链式调用,对同一个对象连缀调用不同方法进行操作
+            $("div").attr("id","box").prop("class","c1")
+            .html("属性操作").css("color","red");
+
+            getStatus.onclick=function(){
+                //获取复选框的选中状态
+                console.log($("#savePwd").attr("checked"));
+                console.log($("#savePwd").prop("checked"));
+                //移除指定属性
+                $("#savePwd").removeAttr("checked");
+            };
+
+            /*
+                原声JS实现：
+                    1.轮播图实现索引切换/鼠标移入停止计时器，
+                    移除重启，点击左右时切换图片
+                    2.实现全选和取消全选
+                    //附加：
+                    反选
+            */
+
+
+
+
+        };
+    </script>
+</head>
+<body>
+
+    <input type="text">
+    <button id="btn">show</button>
+    <div ></div>
+    <input type="checkbox" id="savePwd" checked>
+    <button id="getStatus">获取</button>
+</body>
+</html>

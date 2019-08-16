@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01-createXhr</title>
+    <script>function createXhr(){
+        if (windows.XMLHttpRequest(){
+            xhr=new XMLHttpRequest();
+           }else{
+                xhr=new ActiveXObject('Microsoft.XMLHTTP');
+           }
+           return xhr;
+
+    }</script>
+
+
+
+</head>
+<body>
+
+    <button onclick="createXhr()">创建XHR</button>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        1.接收用户输入的邮箱，提取用户名和服务商
+            "zhangsan@163.com"
+        2.从身份证号中来提取年月日信息
+            "100100"+"nian"+"yue"+"ri"+"siwei"
+        3."101_5&201_7&701_9"
+            商品的id：101,数量:5;
+        */
+        //1.
+        /*var input=prompt("输入邮箱:");
+        var i1=input.split("@");
+        console.log(i1[0]);
+        console.log(i1[1]);*/
+
+        //2.
+        /*var input=prompt("输入身份证号:");
+        var i2=input.substring(6,10);
+        var i6=input.substring(10,12);
+        var i7=input.substring(12,14);
+        console.log(i2,i6,i7);*/
+
+        //3.
+        var i3="101_5&201_7&701_9";
+        var i4=i3.split("&");
+        for (i=0;i<i3.length;i++){
+            var i5=i4[i].split("_");
+            console.log(i5.[0]);
+            console.log(i5.[1]);
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        /*
+        window.onload=function(){
+            alert("1");
+        };
+        if (window.onload){
+            var fn=window.onload;
+            console.log(fn);
+            fn();
+        };
+        window.onload=function(){
+            alert("2");
+        };
+        */
+
+        //jquery使用ready方法表示文档加载完毕
+        $(document).ready(function(){
+            //alert("1");
+        })
+        $().ready(function(){
+            //alert("2");
+        })
+        $(function(){
+           // alert("3");
+            $("h1").on("click",function(){
+                alert("h1被点击")
+            })
+            $("h2").bind("click",function(){
+                alert("h2被点击")
+            })
+            $("h3").click(function(){
+                //alert("h3被点击")
+            }).mouseover(function(){
+                console.log("鼠标移入");
+            }).mouseout(function(){
+                console.log("鼠标移出");
+            }).css("background","green")
+
+            //下拉菜单的点击传值
+            $("ol li").click(function(){
+                //获取被点击元素的标签内容
+
+                console.log(this.innerHTML,$(this).html(),$(this));
+
+                $("span").html($(this).html());
+            })
+
+
+
+        })
+
+
+    </script>
+</head>
+<body>
+    <h1>标题一</h1>
+    <h2>标题二</h2>
+    <h3>标题三</h3>
+
+    <ul>
+        <li>
+            <span>北京</span>
+            <ol>
+                <li>纽约</li>
+                <li>伦敦</li>
+                <li>香港</li>
+                <li>华盛顿</li>
+            </ol>
+        </li>
+    </ul>
+
+</body>
+</html>

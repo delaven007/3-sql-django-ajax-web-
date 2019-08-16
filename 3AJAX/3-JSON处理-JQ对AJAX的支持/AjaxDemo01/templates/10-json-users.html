@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10-json-users.html</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnShow").click(function(){
+                var xhr=createXhr();
+                xhr.open("get","/ajax/10_json_server",true);
+                xhr.onreadystatechange=function(){
+                    if(readyState==4 && status==200){
+                    //接受数据并转换成JS数组
+                        var arr=JSON.parse(xhr.responseText);
+                        var html="";
+                        $(arr).each(function(i,obj){
+                           html+="<tr>"
+                           html+="<td>"+obj.pk+"</td>";
+                           html+="<td>"+obj.fields.uname+"</td>";
+                           html+="<td>"+obj.fields.upwd+"</td>";
+                           html+="<td>"+obj.fields.uemail+"</td>";
+                           html+="<td>"+obj.fields.nickname+"</td>";
+                           html+="</tr>"
+                        });
+                        $("#content").html(html);
+                    }
+                    xhr.send(null);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button id="btnShow">显示</button>
+<table width="500" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>邮箱</th>
+        <th>昵称</th>
+    </tr>
+    </thead>
+    <tbody id="content"></tbody>
+</table>
+
+</body>
+</html>

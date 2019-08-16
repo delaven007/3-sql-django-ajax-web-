@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1.操作数组的头尾元素
+        var arr = ["hello","kitty"];
+        var r1=arr.push(1,2,3);
+        console.log(r1,arr);
+        var r2 = arr.pop();
+        console.log(r2,arr);
+        var r3 =arr.unshift(10);
+        var r3 =arr.unshift(20,30);
+        console.log(r3,arr);
+        var r4 = arr.shift();
+        console.log(r4,arr);
+
+        //转换字符串
+        var r5=arr.toString();
+        var r6=arr.join("*");
+        console.log(r5);
+        console.log(r6);
+        console.log(arr);
+
+        //3.数组的反转（倒序重排）
+        arr.reverse();    //调整原有数组的结构
+        console.log(arr);
+
+        //4.数组排序(对数组原有结构的调整)
+        //默认按照字符unicode编码升序排列
+        arr.sort();
+        console.log(arr);
+
+        //对number值进行升序排列
+        arr.sort(function(a,b){
+            //a,b代表数组中代表相邻的两个元素，如果a-b>0,交换元素位置
+            return a-b;
+        });
+        console.log(arr);
+
+        //自定义降序
+        function sortDESC(a,b){
+        //如果b-a>0,则交换两个元素的位置
+            return b-a;
+        }
+        arr.sort(sortDESC);
+        console.log(arr);
+        /*复杂数组*/
+        var obj={
+          uid:001,
+          uname:"小爱",
+          play:function(){
+            console.log("play");
+          }
+        };
+        console.log(obj.uid);
+        console.log(obj.uname);
+        obj.play();
+
+        var array=[
+        {uname:"九日",age:40},
+        {uname:"郭子",age:25},
+        {uname:"武则",age:24}
+        ];
+        console.log(array[0].age);
+
+        //升序排列
+        arr.sort(function(e1,e2){
+            //a,b代表数组中代表相邻的两个元素，如果a-b>0,交换元素位置
+            return e1.age-e2.age;
+        })
+        console.log(array);
+        /*实现十进制转二进制:除二取余，直至商为0；余数倒叙排列*/
+        function decode(){
+            var num = prompt("请输入数字:");
+            var arr=[];
+            while(num!=0){
+                arr.unshift(num % 2);
+                num=parseInt(num/2);   //parseInt取整数
+
+            }
+            console.log(arr.join(""));
+        }
+        decode();
+
+        //二维数组
+        var arr = [
+        [1],
+        [54,45],
+        [36,63]
+        ];
+        console.log(arr[2][1]);
+        for(var i in arr){
+            for(var j in arr[i]){
+            console.log(arr[i][j])
+            }
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

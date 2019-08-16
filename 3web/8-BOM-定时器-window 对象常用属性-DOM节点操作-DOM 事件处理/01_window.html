@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*
+        console.log(window);
+        //windows对象方法
+        //1.网页弹框
+        alert("只能接受一个信息，没有返回值");
+        var r=confirm("只能接受一个参数,有返回值：'bool'");
+        console.log(r);
+        //可以接受两个参数（“提示信息”，输入框默认值）
+        var r1=prompt("一个参数","第二个参数为输入框默认文本");
+        */
+        /*
+            全局变量和全局函数都是window对象的属性和方法
+
+        */
+        var a=100;
+        function a1(){
+            console.log("a1被调用");
+        }
+        console.log(a,window.a);
+        console.log(window);
+        a1();
+        window.a1();
+        //2.窗口的打开和关闭
+        /*给出确认框，当点击确定时，打开目标文件，点击取消时，关闭当前窗口*/
+        var r=confirm();
+        if(r){
+        window.open("http://www.tmooc.cn/");
+        }else{
+        window.close();
+        }
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<button onclick="history.back()">返回</button>
+<button onclick="history.forward()">前进</button>
+</body>
+</html>

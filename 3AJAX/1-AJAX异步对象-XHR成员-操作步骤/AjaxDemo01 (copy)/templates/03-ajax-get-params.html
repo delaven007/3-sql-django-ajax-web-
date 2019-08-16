@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-ajax-get-params</title>
+    <script src="/static/common.js"></script>
+    <script>
+        function btnshow(){
+            var xhr=createXhr()
+            var url="/ajax/03-server?name=wahaha&age=18;
+            xhr.open('get',url,true);
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4 && xhr.status==200){
+                    document.getElementById('show').innerHTML==xhr.responseText;
+                }
+            }
+            xhr.send(null);
+        }
+    </script>
+</head>
+<body>
+<button onclick="btnshow()">btnshow</button>
+<div id="show">show</div>
+
+
+</body>
+</html>

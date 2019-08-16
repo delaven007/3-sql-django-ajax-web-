@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /*完善横向导航栏，模块500*50，实现整体居中，
+    内部导航项之间添加10像素外边距*/
+    /*参照百度搜索栏，创建输入框（500*50）和按钮（150*50）*/
+    form{
+    }
+    #i1{
+        width:500px;
+        height:50px;
+        font-size:30px;
+    }
+    #b1{
+        width:100px;
+        height:54.5px;
+        font-size:22px;
+        border :2px solid blue;
+        border-top:4px solid blue;
+        color:#fff;
+    }
+    ol{
+        display:none;
+    }
+    .address:hover{
+        color:gray;
+    }
+    d1{
+        width:100px;
+        height:50;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="d1">
+        <form action="/.lodin" >
+            <input id="i1" type="text"><input   value="百度一下" id="b1"  type="submit" style="background:blue;" >
+
+            <ol>
+                <li>北京</li>
+                <li>天津</li>
+                <li>上海</li>
+                <li>深圳</li>
+            </ol>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script src="/static/common.js"></script>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+    /*检查用户名称是否存在的函数  需要有一个返回值，返回True表示用户名称已存在
+    返回false，表示用户不存在*/
+        function checkuname(){
+            var ret=false;
+            //1.创建xhr
+                var xhr=createXhr();
+                //2.创建请求 -/ajax/04-checkuname
+                var uname=$("#uname").val();
+                var url="/ajax/04-checkuname?uname="+uname;
+                xhr.open('get',url,false);
+                //3.设置回调函数
+                xhr.onreadystatechange=function(){
+                    if (xhr.readyState==4 && xhr.status==200){
+                    $("#uname-tip").html(xhr.responseText);
+                    if(xhr.responseText=="1"){
+                        $("#uname-tip").html('用户名称已经存在');
+                        ret=true;
+                     }else{
+                        $("#uname-tip").html("通过");
+                     }
+                    }
+                }
+                //4.发送请求
+                xhr.send(null);
+                return ret;
+        }
+        $(function(){
+            /*
+                为#uname绑定 blur 事件
+            */
+            $("#uname").blur(function(){
+                checkuname();
+            });
+            /*为#btnReg绑定click事件实现注册*/
+            $("#btnReg").click(function(){
+                //1.创建异步对象
+                var xhr=createXhr();
+                //2.创建请求
+                var uname=$("#uname").val();
+                var upwd=$("#upwd").val();
+                var uemail=$("#uemail").val();
+                var nickname=$("#nickname").val();
+                var url="/ajax/04-reguser?uname="+uname+"&upwd="+upwd+"&uemail="+uemail+"&nickname="+nickname;
+                console.log(url);
+                xhr.open("get",url,true);
+                //3.设置回调函数
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState==4 && xhr.status==200){
+                        if(xhr.responseText=="1"){
+                            alert("注册成功");
+                        }else{
+                            alert("失败");
+                        }
+                    }
+                }
+                //4.发送请求
+                xhr.send(null);
+                });
+
+
+                /*
+                    为#btnRegPost绑定ckick事件
+                */
+                $("#btnRegPost").click(function(){
+                //调用checkuname()并接受返回值,如果返回True给出存在提示,
+                //否则,正常发送数据到服务器执行注册操作
+
+                if (checkuname()){
+                    alert("用户名称已存在");
+                }else{
+                    //1.创建xhr
+                    var xhr=createxhr();
+                    //2.创建请求
+                    xhr.open("post","/ajax/04-regpost/",true);
+                    //3.设置回调函数
+                    xhr.onreadystatechange=function(){
+                        if(xhr.readyState==4 && xhr.status==20){
+                            if(xhr.responseText=="1"){
+                                alert("注册成功")
+                            }else{
+                                alert("注册失败")
+                            }
+                        }
+                    }
+                    //4.设置请求头
+                    xhr.setRequestHeader(
+                        "Content-Type",
+                        "application/x-www-form-urlencoded"
+                    );
+                    //5.发送请求 -参数
+                    var uname=$("#uname").val();
+                    var upwd=$("#upwd").val();
+                    var uemail=$("#uemail").val();
+                    var nickname=$("#nickname").val();
+                    var csrf=$("[name='csrfmiddlewaretoken']").val();
+                    var params="uname="+uname+"&upwd="+upwd+"&uemail="+uemail+"&nickname="+nickname+"&csrfmiddlewaretoken="+csrf;
+                    xhr.send(params);
+                    }
+            });
+        });
+    </script>
+</head>
+<body>
+    {% csrf_token %}
+
+<div>
+    用户名:<input type="text" id="uname">
+    <span id="uname-tip"></span>
+</div>
+
+<div>
+    密码:<input type="password" id="upwd">
+</div>
+
+<div>
+    email:<input type="email" id="uemail">
+</div>
+
+<div>
+    昵称:<input type="text" id="nickname">
+</div>
+
+<p>
+    <input type="button" value="注册" id="btnReg">
+</p>
+
+<p>
+    <input type="button" value="注册post" id="btnRegPost">
+</p>
+
+</body>
+</html>

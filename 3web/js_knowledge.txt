@@ -1,0 +1,66 @@
+alert('')                                     网页警告框
+tofixed(n)                                    保留n位小数
+
+var n=5;
+        var r=n++ + ++n + n++ + ++n + n;
+        console.log(r,n); //37,9
+
+自增和自减运算的结果永远是number值
+
+//2.关系运算
+        var res1=10>2;
+        var res2="10">"2";
+        console.log(res1,res2); //true,false
+
+函数允许形参与实参个数不匹配
+
+//对number值进行大小排列
+        arr.sort(function(a,b){
+            //a,b代表数组中代表相邻的两个元素，如果a-b>0,交换元素位置
+            return a-b;
+        });
+        console.log(arr);
+.innerHTML                                          设置当前元素标签内容
+.onclick                                            设置点击按钮在控制台输出
+toUpperCase()                                       转大写字母
+toLowerCase()                                       转小写字母
+Math.ceil(0.99)                                     向上取整,舍弃小数位，整数位加一
+Math.floor(0.99)                                    向下取整:舍弃小数位，保留小数位
+console.log(Math.round(0.49));
+console.log(Math.round(0.5));                       四舍五入取整
+Math.random()                                       生成0~1之间随机小数
+
+##BOM
+alert("只能接受一个信息,没有返回值");                    1.网页弹框
+confirm("只能接受一个参数,有返回值:'bool'");
+prompt("一个参数",第二个参数为输入框默认文本);           可以接受两个参数（“提示信息”，输入框默认值）
+window.open("URL")	                                新建窗口访问指定的URL
+window.close()		                                关闭当前窗口
+var timerID = setInterval(function,interval);       每隔一段时间就执行一次代码
+.innerHTML                                          元素属性：设置或读取标签内容显示在页面
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

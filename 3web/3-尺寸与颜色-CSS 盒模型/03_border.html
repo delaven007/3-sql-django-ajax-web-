@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h1{
+            width:300px;
+            background:pink;
+        }
+        #d1{
+            border:solid;
+        }
+        #d2{
+            border:5px solid blue;
+        }
+        #d3{
+            border:5px dotted green;
+        }
+        #d4{
+            border:5px dashed orange;
+        }
+        #d5{
+            border:5px double tan;
+        }
+        div{
+            /*
+            width:0px;
+            height:0px;
+            border-top:8px solid red;
+            border-right:8px solid rgba(0,0,0,0);
+            border-bottom:8px solid transparent;
+            border-left:8px solid transparent;
+            */
+            border:10px solid transparent;
+            border-top:10px solid red;
+        }
+        span{
+            /*
+            display:inline-block;
+            width:0;
+            height:0;
+           */
+           /*行内元素默认不能手动调宽高，空标签默认宽度为零
+           默认高度与字体大小有关，可以设置字体大小为零实现高度为零的效果*/
+            font-size:0;
+            border-top:8px solid red;
+            border-right:8px solid green;
+            border-bottom:8px solid tan;
+            border-left:8px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <span></span>
+    <h1 id="d1">放大效果好看的风景</h1>
+    <h1 id="d2">放大效好看的风景</h1>
+    <h1 id="d3">放大好看的风景</h1>
+    <h1 id="d4">放大看的风景</h1>
+    <h1 id="d5">放大的风景</h1>
+</body>
+</html>

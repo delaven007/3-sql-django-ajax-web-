@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-jq-get.html</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnShow").click(function(){
+               $.get("/ajax/10_json_server",function(resText){
+                //业务处理,type类型为json，所以resText直接当成JS处理
+                $(resText).each(function(i,obj){
+                    console.log("用户名:"+obj.fields.uname);
+                    console.log("昵称:"+obj.fields.nickname);
+                    console.log("--------------------------");
+
+                })
+               },"json");
+            });
+        })
+    </script>
+</head>
+<body>
+    <button id="btnShow">显示Users</button>
+
+</body>
+</html>

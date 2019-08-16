@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07-jason.html</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <script>
+        $(function(){
+            $("#btnJSON").click(function(){
+                //1.模拟一个JSON字符串
+                var flight = '{"flightNO":"NH980","from":"PEK","to":"KIX","time":"14:20->02:50"}';
+                //2.通过JSON.parse()将JSON串转换成JS对象
+                var obj=JSON.parse(flight);
+                console.log(obj);
+                //3.解析对象
+                console.log("航班号："+obj.flightNO);
+                console.log("始发地："+obj.from);
+                console.log("到达："+obj.to);
+                console.log("时间："+obj.time);
+            });
+            $("#btnJSONArr").click(function(){
+                var str='[{"flightNO":"NH940","from":"PNK","to":"KAX","time":"10:00->01:50"},{"flightNO":"NH980","from":"PEK","to":"KIX","time":"14:20->02:50"}]';
+
+
+                var arr = JSON.parse(str);
+                console.log(str);
+
+                $(arr).each(function(i,obj){
+                    console.log("下标:"+i);
+                    console.log("航班号:"+obj.flightNO);
+                    console.log("始发站:"+obj.from);
+                    console.log("到达:"+obj.to);
+                    console.log("时间:"+obj.time);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btnJSON">JSON串->JS对象</button>
+    <button id="btnJSONArr">JSON串->JS数组</button>
+
+
+
+</body>
+</html>

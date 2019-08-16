@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*function saveData(){
+
+        var arr=[];
+        while(true){
+            var input=prompt("请输入");
+            if (input=="exit"){
+                break;
+            }
+            //添加至数组，数组长度表示数组中下一个元素的索引
+            arr[arr.length] = input;
+        }
+        console.log(arr);
+        }*/
+        //遍历数组取最大值
+       /* function showMax(){
+            var arr =[10,5,546,4658,32132,46346,4654654];
+            var max=arr[0];
+            for (var i=0;i<arr.length;i++){
+                if (arr[i]>max){
+                    max=arr[i];
+                }
+            }
+            console.log(max);
+        }
+        showMax();*/
+        /*定义数组，接受用户输入内容，查询数组中是否存在相应的元素
+        返回对应下标，不存在返回-1*/
+
+        var arr =[10,5,546,4658,32132,46346,4654654];
+        var input=prompt("请输入");
+        for (var i=0;i<arr.length;i++){
+                if (arr[i]==input){
+                    console.log(i);
+                    break;
+                }else{
+                    console.log(-1);
+                }
+
+            }
+
+        //添加至数组，数组长度表示数组中下一个元素的索引
+        /*arr[arr.length] = input;
+        console.log(arr);*/
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

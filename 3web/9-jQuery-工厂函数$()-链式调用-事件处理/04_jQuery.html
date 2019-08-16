@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jQuery文件-->
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        window.onload=function(){
+            //使用jquery获取元素节点:$("选择器")
+            console.log($("h1"));
+            $("h1").innerHTML="///////////";
+            $("h1").html("O(∩_∩)O哈哈~");
+
+            //$("h1")[0].html("的双方各")
+            console.log($("h1")[0]);
+            //原生转jQuery
+            $("h1")[0].innerHTML="FDGFD";
+
+            //eq(index)返回指定下标对应的jq对象
+            console.log($("h1").eq(1));
+            $("h1").eq(1).html("jq对象调用jq方法");
+
+            console.log(test);
+            //原生对象转换jquery对象,$(原生)封装
+            $(test).html("包装成为jquery对象");
+        };
+    </script>
+</head>
+<body>
+
+    <h1>jquery</h1>
+    <h1>jquery</h1>
+    <h1 id="test">jquery</h1>
+    <h1>jquery</h1>
+    <h1>jquery</h1>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--引入jQuery文件-->
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+
+    <h1 id="d1">过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1 class="c1">过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1 class="c1">过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+    <h1>过滤选择器</h1>
+
+    <button id="btn1">:first</button>
+    <button id="btn2">:last</button>
+    <button id="btn3">:odd</button>
+    <button id="btn4">:even</button>
+    <button id="btn5">:eq</button>
+    <button id="btn6">:lt</button>
+    <button id="btn7">:gt</button>
+    <button id="btn8">:not</button>
+
+
+    <script>
+        btn1.onclick=function(){
+            $("h1:first").css("color","blue");
+        };
+        btn2.onclick=function(){
+            $("h1:last").css("color","pink");
+        };
+        btn3.onclick=function(){
+            $("h1:odd").css("color","green");
+        };
+        btn4.onclick=function(){
+            $("h1:even").css("color","tan");
+        };
+        btn5.onclick=function(){
+            $("h1:eq(2)").css("color","pink");
+        };
+        btn6.onclick=function(){
+            $("h1:lt(4)").css("color","green");
+        };
+        btn7.onclick=function(){
+            $("h1:gt(6)").css("color","tan");
+        };
+        btn8.onclick=function(){
+            //$("h1:not(:eq(3))").css("color","#fa0370");
+        //};
+            $("h1:not(#d1,.c1)").css("color","#fa0730");
+        };
+
+
+
+
+
+    </script>
+</body>
+</html>

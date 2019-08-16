@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15-onkeyup.html</title>
+    <script src="/static/jquery-1.11.3.js"></script>
+    <style>
+        #main{
+            position:relative;
+        }
+        #show{
+            width:180px;
+            min-height:120px;
+            border:1px solid #000;
+            background:#fff;
+            position:absolute;
+            left:55px;
+            top:30px;
+            display:none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("#uname").keyup(function(){
+
+                //判断文本框的值去掉空格后是否为空,不为空发送ajax请求
+                if(this.value.trim().len==0){
+                    $("#show").html("");
+                    $("#show").css("display","none"); //隐藏#show
+                }else{
+                    $.get('/ajax/15-server',"kw="+this.value,function(resText){
+                        if(resText.length==0){      //判断数组是否为false
+                            $("#show").html("");   //清空show里的内容
+                            $("#show").css("display","none"); //隐藏#show
+                        }else{
+                        //清空原有内容
+                            $("#show").html("");
+                            $(resText).each(function(i,obj){
+                                $("#show").css("display","block"); //显示
+                                var $p=$("<p>"+obj+"</p>");
+                                $("#show").append($p);
+                            });
+                        }
+                    },'json');
+                }
+            });
+        })
+    </script>
+
+
+
+</head>
+<body>
+<div id="main">
+
+    用户名: <input type="text" id="uname">
+    <button>搜索</button>
+    <!--提示框:绝对定位的，相对于main实现位置的摆放-->
+    <div id="show"></div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-ajax-get-params</title>
+    <script src="/static/common.js"></script>
+    <script>
+        function btnshow(){
+            //1创建xhr
+            var xhr=createXhr();
+            //2创建请求(带参数)
+            var url='/ajax/03-server?name=wahaha&age=18';
+            xhr.open('get',url,true);
+            //3设置回调函数
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4&&xhr.status==200){
+                    document.getElementById('show').innerHTML=xhr.responseText;
+                }
+            }
+            //4发送请求
+            xhr.send(null);
+        }
+    </script>
+</head>
+<body>
+
+<button onclick="btnshow()">btnshow</button>
+<div id="show">show</div>
+
+
+
+
+</body>
+</html>
