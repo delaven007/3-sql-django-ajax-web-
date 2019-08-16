@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参测试</title>
+</head>
+<body>
+    <h5>myvar+1={{ myvar | add:1 | add:3}}</h5>
+    <h5>mystr={{ mystr }}</h5>
+    <h5>mystr|upper={{ mystr |upper }}</h5>
+    <h5>mystr:truncatechars={{ mystr | truncatechars:10 }}</h5>
+    <h5>mylist={{ mylist.0}}</h5>
+    <h5>person={{ person.name }}</h5>
+    <h4>myfun1()={{myfun1}}</h4>
+    <h3>你是：
+        {% if money > 100000000 %}
+        <b>富人</b>
+        {% elif money > 100000 %}
+        <i>有钱人</i>
+        {% endif %}
+    </h3>
+    {% if money > 0 %}
+    <h1>有点钱</h1>
+    {% endif %}
+    <select >
+        {% for c in city %}
+        <option >{{ c }}</option>
+        {% empty %}
+        <option >请添加数据</option>
+        {% endfor %}
+
+    </select>
+
+    <ul>
+        {% for c in city %}
+        {% if forloop.first %}
+        <li>-----------------</li>
+        {% endif %}
+        <li>第{{ forloop.counter }}个城市: {{c}}</li>
+        {% endfor %}
+    </ul>
+    {% comment '运气不好' %}
+    多行注释内容
+    {% endcomment %}
+       {# 不显示 #}
+
+</body>
+</html>
